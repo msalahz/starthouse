@@ -1,5 +1,6 @@
 .starthouse{ color: #000;  }
 .starthouse:hover{ color: #dc241f; }
+.no-lowercase { text-transform:none; }
 .nav, .cf, .container, #smoke, #content, .navigation, .footer {
   *zoom: 1
 }
@@ -617,7 +618,7 @@ p a:hover {
 }
 
 strong {
-  font-weight: normal;
+  font-weight: bold;
   font-family: "HelveticaNeueLTStd75Bold", "HelveticaNeue", "Helvetica Neue", "Helvetica", "Arial", sans-serif
 }
 
