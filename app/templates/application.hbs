@@ -1,11 +1,25 @@
 <div aria-hidden="true" id="smoke"></div>
 <header class="navigation" id="navigation">
     <nav role="navigation">
-        <a class="logotype" href="/"><span class="starthouse">START HOUSE</span></a>
+      {{#link-to  'application' class="logotype"}}
+          <span class="starthouse">START HOUSE</span>
+      {{/link-to}}
         <ul class="nav semantic-navigation" id="primary">
-            <li><a href="/how-we-are"><span>Who We Are</span></a></li>
-            <li><a href="/our-work"><span>Our Work</span></a></li>
-            <li><a href="/gear-heads"><span>Gear Heads</span></a></li>
+            <li>
+              {{#link-to  'how-we-are'}}
+                  <span>Who We Are</span>
+              {{/link-to}}
+            </li>
+            <li>
+              {{#link-to  'our-work'}}
+                  <span>Our Work</span>
+              {{/link-to}}
+            </li>
+            <li>
+              {{#link-to  'gear-heads'}}
+                  <span>Gear Heads</span>
+              {{/link-to}}
+            </li>
         </ul>
     </nav>
 
