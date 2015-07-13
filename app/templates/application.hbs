@@ -1,3 +1,29 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<div aria-hidden="true" id="smoke"></div>
+<header class="navigation" id="navigation">
+    <nav role="navigation">
+        <a class="logotype" href="/"><span class="starthouse">START HOUSE</span></a>
+        <ul class="nav semantic-navigation" id="primary">
+            <li><a href="/how-we-are"><span>Who We Are</span></a></li>
+            <li><a href="/our-work"><span>Our Work</span></a></li>
+            <li><a href="/gear-heads"><span>Gear Heads</span></a></li>
+        </ul>
+    </nav>
 
-{{outlet}}
+</header>
+
+<section id="content" role="main">
+  {{outlet}}
+</section>
+<footer class="footer" id="footer">
+    <nav role="navigation">
+        <p class="copyright">
+            <small>©</small>
+            2015 Start House, Inc.
+        </p>
+        <ul class="nav">
+            <li><a href="mailto:info@starthouse.la">
+                info@starthouse.la</a></li>
+            <li><a href="tel:(323) 457-4023">Phone: (323) 457-4023</a></li>
+        </ul>
+    </nav>
+</footer>
