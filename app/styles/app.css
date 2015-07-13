@@ -156,7 +156,8 @@ q {
 }
 
 .starthouse-banner {
-  margin: 25px auto;
+  margin: 100px auto;
+  text-align: center;
 }
 
 .biggest {
@@ -1157,7 +1158,7 @@ date {
 }
 
 .navigation .starthouse {
-  font-size: 15px;
+  font-size: 1.2em;
 }
 
 .navigation canvas {
