@@ -1,6 +1,7 @@
 .starthouse{ color: #000;  }
-.starthouse:hover{ color: #dc241f; }
+.starthouse:hover{ color: #42b4e6; }
 .no-lowercase { text-transform:none; }
+.no-border { border: none; }
 .nav, .cf, .container, #smoke, #content, .navigation, .footer {
   *zoom: 1
 }
@@ -256,12 +257,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0
 }
-
+.img-holder{ height: 100px; }
 img {
   max-width: 100%;
-  height: auto;
+  max-height: 100px;
   vertical-align: middle;
-  -ms-interpolation-mode: bicubic
+  -ms-interpolation-mode: bicubic;
 }
 
 .fade {
@@ -302,19 +303,19 @@ body {
 }
 
 ::-moz-selection {
-  background: #dc241f;
+  background: #42b4e6;
   color: #fff;
   text-shadow: none
 }
 
 ::selection {
-  background: #dc241f;
+  background: #42b4e6;
   color: #fff;
   text-shadow: none
 }
 
 a, a:visited {
-  color: #dc241f;
+  color: #42b4e6;
   text-decoration: none
 }
 
@@ -337,7 +338,7 @@ a:active, a.active, .active > a {
 }
 
 a:link {
-  -webkit-tap-highlight-color: #dc241f
+  -webkit-tap-highlight-color: #42b4e6
 }
 
 .active > a, .active > a:hover, .active > button, .active > button:hover, .disabled, .disabled > a, .disabled > button {
@@ -506,7 +507,7 @@ code, kbd, samp {
 }
 
 code {
-  color: #dc241f
+  color: #42b4e6
 }
 
 pre {
@@ -637,7 +638,7 @@ blockquote p {
 }
 
 section > h1, section > h2, article > h1, article > h2 {
-  border-top: 1px solid #dc241f;
+  border-top: 1px solid #42b4e6;
   padding-top: 0.5em
 }
 
@@ -684,7 +685,7 @@ pre, code {
 date {
   font-size: 12px;
   font-size: 0.75rem;
-  color: #dc241f;
+  color: #42b4e6;
   font-family: "MrsEavesBold", "Georgia", "Times", "Times New Roman", serif;
   display: block
 }
@@ -735,7 +736,7 @@ date {
 
 .modicon-crest:before, .modeset-crest:before, .modeset-logo:before {
   content: "\e000";
-  color: #dc241f
+  color: #42b4e6
 }
 
 .modicon-logotype:before, .modeset-logotype:before, .modeset-typetrade:before, .modeset-logo:after {
@@ -755,7 +756,7 @@ date {
 
 .modicon-mountains:before, .modeset-heading:before, .modeset-list li:before, .modeset-list.modeset-list-inverted ul li:before {
   content: "\e004";
-  color: #dc241f
+  color: #42b4e6
 }
 
 .modicon-plus:before, .modeset-list ul li:before, .modeset-list.modeset-list-inverted li:before {
@@ -896,7 +897,7 @@ date {
 
 .pub-deets {
   margin-top: 2em;
-  border-top: 1px solid #dc241f;
+  border-top: 1px solid #42b4e6;
   padding-top: 1.5em
 }
 
@@ -1117,7 +1118,7 @@ date {
 }
 
 .navigation .nav a:hover, .navigation .nav a:active {
-  color: #dc241f
+  color: #42b4e6
 }
 
 .navigation .nav .active a {
@@ -1132,7 +1133,6 @@ date {
   -o-transition: width 0.25s cubic-bezier(0.77, 0, 0.175, 1);
   transition: width 0.25s cubic-bezier(0.77, 0, 0.175, 1);
   content: "";
-  background-color: #dc241f;
   position: absolute;
   top: -2px;
   left: 0;
@@ -1241,7 +1241,7 @@ date {
 }
 
 .footer a:hover, .footer a:active, .footer .active a {
-  color: #dc241f
+  color: #42b4e6
 }
 
 .footer .active a {
@@ -1268,7 +1268,7 @@ date {
 }
 
 .footer .modeset-crest {
-  color: #dc241f;
+  color: #42b4e6;
   position: absolute;
   bottom: 0;
   right: -10px;

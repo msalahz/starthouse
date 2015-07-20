@@ -86,7 +86,6 @@ define('starthouse/router', ['exports', 'ember', 'starthouse/config/environment'
   });
 
   Router.map(function () {
-    this.route('how-we-are');
     this.route('our-work');
     this.route('gear-heads');
   });
@@ -186,7 +185,7 @@ define('starthouse/templates/application', ['exports'], function (exports) {
           var el1 = dom.createTextNode("                  ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("span");
-          var el2 = dom.createTextNode("Who We Are");
+          var el2 = dom.createTextNode("Our Work");
           dom.appendChild(el1, el2);
           dom.appendChild(el0, el1);
           var el1 = dom.createTextNode("\n");
@@ -226,46 +225,6 @@ define('starthouse/templates/application', ['exports'], function (exports) {
           var el1 = dom.createTextNode("                  ");
           dom.appendChild(el0, el1);
           var el1 = dom.createElement("span");
-          var el2 = dom.createTextNode("Our Work");
-          dom.appendChild(el1, el2);
-          dom.appendChild(el0, el1);
-          var el1 = dom.createTextNode("\n");
-          dom.appendChild(el0, el1);
-          return el0;
-        },
-        buildRenderNodes: function buildRenderNodes() { return []; },
-        statements: [
-
-        ],
-        locals: [],
-        templates: []
-      };
-    }());
-    var child3 = (function() {
-      return {
-        meta: {
-          "revision": "Ember@1.13.3",
-          "loc": {
-            "source": null,
-            "start": {
-              "line": 19,
-              "column": 14
-            },
-            "end": {
-              "line": 21,
-              "column": 14
-            }
-          },
-          "moduleName": "starthouse/templates/application.hbs"
-        },
-        arity: 0,
-        cachedFragment: null,
-        hasRendered: false,
-        buildFragment: function buildFragment(dom) {
-          var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("                  ");
-          dom.appendChild(el0, el1);
-          var el1 = dom.createElement("span");
           var el2 = dom.createTextNode("Gear Heads");
           dom.appendChild(el1, el2);
           dom.appendChild(el0, el1);
@@ -291,7 +250,7 @@ define('starthouse/templates/application', ['exports'], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 43,
+            "line": 38,
             "column": 9
           }
         },
@@ -324,16 +283,6 @@ define('starthouse/templates/application', ['exports'], function (exports) {
         var el3 = dom.createElement("ul");
         dom.setAttribute(el3,"class","nav semantic-navigation");
         dom.setAttribute(el3,"id","primary");
-        var el4 = dom.createTextNode("\n            ");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createElement("li");
-        var el5 = dom.createTextNode("\n");
-        dom.appendChild(el4, el5);
-        var el5 = dom.createComment("");
-        dom.appendChild(el4, el5);
-        var el5 = dom.createTextNode("            ");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
         var el4 = dom.createTextNode("\n            ");
         dom.appendChild(el3, el4);
         var el4 = dom.createElement("li");
@@ -433,23 +382,21 @@ define('starthouse/templates/application', ['exports'], function (exports) {
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var element0 = dom.childAt(fragment, [2, 1]);
         var element1 = dom.childAt(element0, [3]);
-        var morphs = new Array(5);
+        var morphs = new Array(4);
         morphs[0] = dom.createMorphAt(element0,1,1);
         morphs[1] = dom.createMorphAt(dom.childAt(element1, [1]),1,1);
         morphs[2] = dom.createMorphAt(dom.childAt(element1, [3]),1,1);
-        morphs[3] = dom.createMorphAt(dom.childAt(element1, [5]),1,1);
-        morphs[4] = dom.createMorphAt(dom.childAt(fragment, [4]),1,1);
+        morphs[3] = dom.createMorphAt(dom.childAt(fragment, [4]),1,1);
         return morphs;
       },
       statements: [
         ["block","link-to",["application"],["class","logotype"],0,null,["loc",[null,[4,6],[6,18]]]],
-        ["block","link-to",["how-we-are"],[],1,null,["loc",[null,[9,14],[11,26]]]],
-        ["block","link-to",["our-work"],[],2,null,["loc",[null,[14,14],[16,26]]]],
-        ["block","link-to",["gear-heads"],[],3,null,["loc",[null,[19,14],[21,26]]]],
-        ["content","outlet",["loc",[null,[29,2],[29,12]]]]
+        ["block","link-to",["our-work"],[],1,null,["loc",[null,[9,14],[11,26]]]],
+        ["block","link-to",["gear-heads"],[],2,null,["loc",[null,[14,14],[16,26]]]],
+        ["content","outlet",["loc",[null,[24,2],[24,12]]]]
       ],
       locals: [],
-      templates: [child0, child1, child2, child3]
+      templates: [child0, child1, child2]
     };
   }()));
 
@@ -469,8 +416,8 @@ define('starthouse/templates/gear-heads', ['exports'], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 66,
-            "column": 0
+            "line": 37,
+            "column": 10
           }
         },
         "moduleName": "starthouse/templates/gear-heads.hbs"
@@ -480,111 +427,36 @@ define('starthouse/templates/gear-heads', ['exports'], function (exports) {
       hasRendered: false,
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
-        var el1 = dom.createElement("div");
-        dom.setAttribute(el1,"class","starthouse-banner biggest");
+        var el1 = dom.createElement("h1");
+        dom.setAttribute(el1,"class","starthouse-banner no-border");
         var el2 = dom.createTextNode("GEAR HEADS");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
         var el1 = dom.createElement("article");
-        dom.setAttribute(el1,"class","single");
-        var el2 = dom.createTextNode("\n    ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("h1");
-        var el3 = dom.createElement("strong");
-        dom.setAttribute(el3,"class","no-lowercase");
-        var el4 = dom.createTextNode("We’ve been building mobile solutions long before the app store, when screens were\n        black and white.");
-        dom.appendChild(el3, el4);
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n    ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("ul");
-        var el3 = dom.createTextNode("\n        ");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createElement("li");
-        var el4 = dom.createTextNode("\n            ");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createElement("p");
-        var el5 = dom.createTextNode("Individually, over the last 25 years our team has built systems for Fortune 500 companies around the\n                globe. Chances are, you’ve used something we’ve built.");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n        ");
-        dom.appendChild(el3, el4);
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n        ");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createElement("li");
-        var el4 = dom.createTextNode("\n            ");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createElement("p");
-        var el5 = dom.createTextNode("We’ve put telescopes in space, made your water cleaner, and built one of the most popular and financially\n                successful social networks in the world. To learn about the specific solutions we’ve engineered, refer\n                to\n                ‘Our Work’ tab.");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n        ");
-        dom.appendChild(el3, el4);
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n    ");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n    ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("p");
-        var el3 = dom.createElement("strong");
-        dom.setAttribute(el3,"class","no-lowercase");
-        var el4 = dom.createTextNode("Here’s just some of our work.");
-        dom.appendChild(el3, el4);
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n");
-        dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createElement("article");
-        dom.setAttribute(el1,"class","double");
         var el2 = dom.createTextNode("\n    ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("section");
         var el3 = dom.createTextNode("\n        ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("h1");
-        dom.setAttribute(el3,"class","no-lowercase");
-        var el4 = dom.createTextNode("LG:");
+        var el4 = dom.createElement("strong");
+        dom.setAttribute(el4,"class","no-lowercase");
+        var el5 = dom.createTextNode("we’ve put telescopes in space, made your water cleaner, and built one of the\n            most popular and financially successful social networks in the world.");
+        dom.appendChild(el4, el5);
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n\n        ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("p");
-        var el4 = dom.createElement("strong");
-        dom.setAttribute(el4,"class","no-lowercase");
-        var el5 = dom.createTextNode("The Problem:");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode(" How to improve the efficiency of LG’s proprietary water\n            filtration system in desalination plants located in remote areas without connectivity.");
+        var el4 = dom.createTextNode("we’ve been building mobile solutions long before the app store, when screens were black and\n            white.");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n\n        ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("p");
-        var el4 = dom.createElement("strong");
-        dom.setAttribute(el4,"class","no-lowercase");
-        var el5 = dom.createTextNode("The Solution:");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode(" Developed the Q+ projection system allowing operators to\n            project their optimal configuration based utilizing over 1000 water input properties while off line, and\n            continue to update and optimize when online. ");
-        dom.appendChild(el3, el4);
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n\n        ");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createElement("p");
-        var el4 = dom.createElement("strong");
-        dom.setAttribute(el4,"class","no-lowercase");
-        var el5 = dom.createTextNode("The Benefit:");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode(" Decreased operating costs and increased licensing lead LG\n            into the global market.");
+        var el4 = dom.createTextNode("Individually over the last 25 years our team has built systems for Fortune 500 companies around the\n            globe. chances are, you’ve used something we’ve built.");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n    ");
@@ -597,43 +469,16 @@ define('starthouse/templates/gear-heads', ['exports'], function (exports) {
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("h1");
         dom.setAttribute(el3,"class","no-lowercase");
-        var el4 = dom.createTextNode("Grindr:");
+        var el4 = dom.createTextNode("Chris Econn.");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n\n        ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("p");
-        var el4 = dom.createElement("strong");
-        dom.setAttribute(el4,"class","no-lowercase");
-        var el5 = dom.createTextNode("The Problem:");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode(" How to improve the technology and internal development\n            processes of the fastest growing social network in the world to support the monthly growth of 35,000 new\n            users, chat messaging traffic surpassing Twitter, and a monthly hosting bill that could buy you a small\n            island in the Pacific.");
+        var el4 = dom.createTextNode("Chris is the president and chief architect at Start house. He brings 15 years of high scalability systems\n            engineering and architecture, including 12 years of hands-on Mobile development experience to the team. An\n            international man of mystery, Chris lives and works where the problems are. There have been sightings in the\n            UK, Austin, and New York City. He currently works out of his home in the Hollywood Hills, assembling his\n            global Dark Army for the next great challenge.");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n\n        ");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createElement("p");
-        var el4 = dom.createElement("strong");
-        dom.setAttribute(el4,"class","no-lowercase");
-        var el5 = dom.createTextNode("The Solution:");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode(" Replaced an off-shore workforce of 31 with 6 in-house\n            developers to build The New Grindr.");
-        dom.appendChild(el3, el4);
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n\n        ");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createElement("p");
-        var el4 = dom.createElement("strong");
-        dom.setAttribute(el4,"class","no-lowercase");
-        var el5 = dom.createTextNode("The Benefit:");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode(" Decreased cost in labor, decreased cost in\n            infrastructure to support an increase in user traffic.");
-        dom.appendChild(el3, el4);
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n\n    ");
+        var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n    ");
@@ -643,49 +488,39 @@ define('starthouse/templates/gear-heads', ['exports'], function (exports) {
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("h1");
         dom.setAttribute(el3,"class","no-lowercase");
-        var el4 = dom.createTextNode("Tugg:");
+        var el4 = dom.createTextNode("Ryan Ries.");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n\n        ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("p");
-        var el4 = dom.createElement("strong");
-        dom.setAttribute(el4,"class","no-lowercase");
-        var el5 = dom.createTextNode("The Problem:");
-        dom.appendChild(el4, el5);
+        var el4 = dom.createTextNode("Dr. Ries is an accomplished research scientist, system engineer, program manager, and business developer that\n            has honed his expertise in scientific consulting and data analytics. He has developed advanced imaging\n            products, incorporating cutting edge hardware with data analytics to improve performance in mission critical\n            deployments for Teledyne and Arete. Dr. Ries does not do house calls.");
         dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode(" How to make a popular and successful crowd-sourced\n            ticketing platform into a scalable and legitimate player in world of entertainment distribution.");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n    ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("section");
+        var el3 = dom.createTextNode("\n        ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("h1");
+        dom.setAttribute(el3,"class","no-lowercase");
+        var el4 = dom.createTextNode("The Dark Army.");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n\n        ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("p");
-        var el4 = dom.createElement("strong");
-        dom.setAttribute(el4,"class","no-lowercase");
-        var el5 = dom.createTextNode("The Solution:");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode(" Built an OTT network for content distribution and\n            combined it with a revamped ticketing platform, built by a dream team of developers recruited from all\n            over the world: Uruguay, Austin, Los Angeles, Egypt, Irvine.");
+        var el4 = dom.createTextNode("A band of misfits, foreign and domestic, Chris has found, mentored, and trained to apply their raw talents to\n            execute with deadly precision. Under cover of night, they apply their expertise in algorithm development,\n            scaling, operations, and embedded / mobile development while the enemy sleeps.");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n\n        ");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createElement("p");
-        var el4 = dom.createElement("strong");
-        dom.setAttribute(el4,"class","no-lowercase");
-        var el5 = dom.createTextNode("The Benefit:");
-        dom.appendChild(el4, el5);
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode(" Tugg pentetrated new markets instead while refactoring\n            for scale, becoming the world’s first ticketing provider and content distributor.");
-        dom.appendChild(el3, el4);
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n\n    ");
+        var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n\n\n\n");
         dom.appendChild(el0, el1);
         return el0;
       },
@@ -827,8 +662,8 @@ define('starthouse/templates/index', ['exports'], function (exports) {
       hasRendered: false,
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
-        var el1 = dom.createElement("div");
-        dom.setAttribute(el1,"class","starthouse-banner biggest");
+        var el1 = dom.createElement("h1");
+        dom.setAttribute(el1,"class","starthouse-banner no-border");
         var el2 = dom.createTextNode("START HOUSE");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
@@ -922,7 +757,7 @@ define('starthouse/templates/our-work', ['exports'], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 30,
+            "line": 51,
             "column": 0
           }
         },
@@ -933,14 +768,14 @@ define('starthouse/templates/our-work', ['exports'], function (exports) {
       hasRendered: false,
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
-        var el1 = dom.createElement("div");
-        dom.setAttribute(el1,"class","starthouse-banner biggest");
+        var el1 = dom.createElement("h1");
+        dom.setAttribute(el1,"class","starthouse-banner no-border");
         var el2 = dom.createTextNode("OUR WORK");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
-        var el1 = dom.createElement("article");
+        var el1 = dom.createElement("section");
         var el2 = dom.createTextNode("\n    ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("h1");
@@ -951,12 +786,22 @@ define('starthouse/templates/our-work', ['exports'], function (exports) {
         var el2 = dom.createTextNode("\n\n    ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("p");
+        dom.setAttribute(el2,"class","img-holder");
+        var el3 = dom.createElement("img");
+        dom.setAttribute(el3,"alt","Fixture data matters");
+        dom.setAttribute(el3,"class","postings-figure");
+        dom.setAttribute(el3,"src","/assets/lg-nh2-logo.png");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n\n    ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("p");
         var el3 = dom.createElement("strong");
         dom.setAttribute(el3,"class","no-lowercase");
         var el4 = dom.createTextNode("The Problem:");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode(" How to improve the efficiency of LG’s proprietary water filtration system in desalination plants located in remote areas without connectivity.");
+        var el3 = dom.createTextNode(" How to improve the efficiency of LG’s proprietary water\n        filtration system in desalination plants located in remote areas without connectivity.");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n\n    ");
@@ -967,7 +812,7 @@ define('starthouse/templates/our-work', ['exports'], function (exports) {
         var el4 = dom.createTextNode("The Solution:");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode(" Developed the Q+ projection system allowing operators to project their optimal configuration based utilizing over 1000 water input properties while off line, and continue to update and optimize when online. ");
+        var el3 = dom.createTextNode(" Developed the Q+ projection system allowing operators to\n        project their optimal configuration based utilizing over 1000 water input properties while off line, and\n        continue to update and optimize when online. ");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n\n    ");
@@ -978,7 +823,7 @@ define('starthouse/templates/our-work', ['exports'], function (exports) {
         var el4 = dom.createTextNode("The Benefit:");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("  Decreased operating costs and increased licensing lead LG into the global market.");
+        var el3 = dom.createTextNode(" Decreased operating costs and increased licensing lead LG\n        into the global market.");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
@@ -986,7 +831,7 @@ define('starthouse/templates/our-work', ['exports'], function (exports) {
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
-        var el1 = dom.createElement("article");
+        var el1 = dom.createElement("section");
         var el2 = dom.createTextNode("\n    ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("h1");
@@ -997,12 +842,22 @@ define('starthouse/templates/our-work', ['exports'], function (exports) {
         var el2 = dom.createTextNode("\n\n    ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("p");
+        dom.setAttribute(el2,"class","img-holder");
+        var el3 = dom.createElement("img");
+        dom.setAttribute(el3,"alt","Fixture data matters");
+        dom.setAttribute(el3,"class","postings-figure");
+        dom.setAttribute(el3,"src","/assets/Grindr.png");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n\n    ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("p");
         var el3 = dom.createElement("strong");
         dom.setAttribute(el3,"class","no-lowercase");
         var el4 = dom.createTextNode("The Problem:");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode(" How to improve the technology and internal development processes of the fastest growing social network in the world to support the monthly growth of 35,000 new users, chat messaging traffic surpassing Twitter, and a monthly hosting bill that could buy you a small island in the Pacific.");
+        var el3 = dom.createTextNode(" How to improve the technology and internal development\n        processes of the fastest growing social network in the world to support the monthly growth of 35,000 new\n        users, chat messaging traffic surpassing Twitter, and a monthly hosting bill that could buy you a small\n        island in the Pacific.");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n\n    ");
@@ -1013,7 +868,7 @@ define('starthouse/templates/our-work', ['exports'], function (exports) {
         var el4 = dom.createTextNode("The Solution:");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode(" Replaced an off-shore workforce of 31 with 6 in-house developers to build The New Grindr.");
+        var el3 = dom.createTextNode(" Replaced an off-shore workforce of 31 with 6 in-house\n        developers to build The New Grindr.");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n\n    ");
@@ -1024,15 +879,15 @@ define('starthouse/templates/our-work', ['exports'], function (exports) {
         var el4 = dom.createTextNode("The Benefit:");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("  Decreased cost in labor, decreased cost in infrastructure to support an increase in user traffic.");
+        var el3 = dom.createTextNode(" Decreased cost in labor, decreased cost in\n        infrastructure to support an increase in user traffic.");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n");
+        var el2 = dom.createTextNode("\n\n");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
-        var el1 = dom.createElement("article");
+        var el1 = dom.createElement("section");
         var el2 = dom.createTextNode("\n    ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("h1");
@@ -1043,12 +898,22 @@ define('starthouse/templates/our-work', ['exports'], function (exports) {
         var el2 = dom.createTextNode("\n\n    ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("p");
+        dom.setAttribute(el2,"class","img-holder");
+        var el3 = dom.createElement("img");
+        dom.setAttribute(el3,"alt","Fixture data matters");
+        dom.setAttribute(el3,"class","postings-figure");
+        dom.setAttribute(el3,"src","/assets/tugg.png");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n\n    ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("p");
         var el3 = dom.createElement("strong");
         dom.setAttribute(el3,"class","no-lowercase");
         var el4 = dom.createTextNode("The Problem:");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode(" How to make a popular and successful crowd-sourced ticketing platform into a scalable and legitimate player in world of entertainment distribution.");
+        var el3 = dom.createTextNode(" How to make a popular and successful crowd-sourced\n        ticketing platform into a scalable and legitimate player in world of entertainment distribution.");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n\n    ");
@@ -1059,7 +924,7 @@ define('starthouse/templates/our-work', ['exports'], function (exports) {
         var el4 = dom.createTextNode("The Solution:");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode(" Built an OTT network for content distribution and combined it with a revamped ticketing platform, built by a dream team of developers recruited from all over the world: Uruguay, Austin, Los Angeles, Egypt, Irvine.");
+        var el3 = dom.createTextNode(" built a dream team of developers recruited from all over\n        the world: Uruguay, Austin, Los Angeles, Egypt, Irvine; deployed a VOD network for distributing content and\n        combined it with a revamped, highly scalable SOA ticketing platform.");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n\n    ");
@@ -1070,10 +935,10 @@ define('starthouse/templates/our-work', ['exports'], function (exports) {
         var el4 = dom.createTextNode("The Benefit:");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode(" Tugg pentetrated new markets instead while refactoring for scale, becoming the world’s first ticketing provider and content distributor.");
+        var el3 = dom.createTextNode(" Tugg pentetrated new markets while refactoring for scale,\n        becoming the world’s first ticketing provider and video content distributor. ");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n");
+        var el2 = dom.createTextNode("\n\n");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n\n");
@@ -1118,7 +983,7 @@ catch(err) {
 if (runningTests) {
   require("starthouse/tests/test-helper");
 } else {
-  require("starthouse/app")["default"].create({"name":"starthouse","version":"0.0.0+25a726cb"});
+  require("starthouse/app")["default"].create({"name":"starthouse","version":"0.0.0+f815712f"});
 }
 
 /* jshint ignore:end */
