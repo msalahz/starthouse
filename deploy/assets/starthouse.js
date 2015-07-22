@@ -42,10 +42,26 @@ define('starthouse/initializers/export-application-global', ['exports', 'ember',
   exports.initialize = initialize;
 
   function initialize(container, application) {
-    var classifiedName = Ember['default'].String.classify(config['default'].modulePrefix);
+    if (config['default'].exportApplicationGlobal !== false) {
+      var value = config['default'].exportApplicationGlobal;
+      var globalName;
 
-    if (config['default'].exportApplicationGlobal && !window[classifiedName]) {
-      window[classifiedName] = application;
+      if (typeof value === 'string') {
+        globalName = value;
+      } else {
+        globalName = Ember['default'].String.classify(config['default'].modulePrefix);
+      }
+
+      if (!window[globalName]) {
+        window[globalName] = application;
+
+        application.reopen({
+          willDestroy: function willDestroy() {
+            this._super.apply(this, arguments);
+            delete window[globalName];
+          }
+        });
+      }
     }
   }
 
@@ -416,7 +432,7 @@ define('starthouse/templates/gear-heads', ['exports'], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 37,
+            "line": 38,
             "column": 10
           }
         },
@@ -429,7 +445,7 @@ define('starthouse/templates/gear-heads', ['exports'], function (exports) {
         var el0 = dom.createDocumentFragment();
         var el1 = dom.createElement("h1");
         dom.setAttribute(el1,"class","starthouse-banner no-border");
-        var el2 = dom.createTextNode("GEAR HEADS");
+        var el2 = dom.createTextNode("GEAR HEADS.");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
@@ -494,7 +510,7 @@ define('starthouse/templates/gear-heads', ['exports'], function (exports) {
         var el3 = dom.createTextNode("\n\n        ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("p");
-        var el4 = dom.createTextNode("Dr. Ries is an accomplished research scientist, system engineer, program manager, and business developer that\n            has honed his expertise in scientific consulting and data analytics. He has developed advanced imaging\n            products, incorporating cutting edge hardware with data analytics to improve performance in mission critical\n            deployments for Teledyne and Arete. Dr. Ries does not do house calls.");
+        var el4 = dom.createTextNode("dr. ries is an accomplished research scientist and systems engineer who provides start house with world class\n            expertise in data analytics and a deep bench of experienced data scientists. over his 15 year career, he has\n            developed advanced imaging products, incorporating cutting edge hardware with data analytics to improve\n            performance in mission critical deployments for teledyne, arete, and daqri.");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n    ");
@@ -513,7 +529,7 @@ define('starthouse/templates/gear-heads', ['exports'], function (exports) {
         var el3 = dom.createTextNode("\n\n        ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("p");
-        var el4 = dom.createTextNode("A band of misfits, foreign and domestic, Chris has found, mentored, and trained to apply their raw talents to\n            execute with deadly precision. Under cover of night, they apply their expertise in algorithm development,\n            scaling, operations, and embedded / mobile development while the enemy sleeps.");
+        var el4 = dom.createTextNode("A not-so-small squad of engineers--foreign and domestic--trained to execute on your technology with deadly\n            precision, on time and on budget. Under cover of night, they apply their expertise in algorithm development,\n            scaling, operations, and embedded / mobile development while the enemy sleeps (launching nerf wars and\n            hack-a-thons on your dime).");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n    ");
@@ -521,108 +537,6 @@ define('starthouse/templates/gear-heads', ['exports'], function (exports) {
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        return el0;
-      },
-      buildRenderNodes: function buildRenderNodes() { return []; },
-      statements: [
-
-      ],
-      locals: [],
-      templates: []
-    };
-  }()));
-
-});
-define('starthouse/templates/how-we-are', ['exports'], function (exports) {
-
-  'use strict';
-
-  exports['default'] = Ember.HTMLBars.template((function() {
-    return {
-      meta: {
-        "revision": "Ember@1.13.3",
-        "loc": {
-          "source": null,
-          "start": {
-            "line": 1,
-            "column": 0
-          },
-          "end": {
-            "line": 18,
-            "column": 0
-          }
-        },
-        "moduleName": "starthouse/templates/how-we-are.hbs"
-      },
-      arity: 0,
-      cachedFragment: null,
-      hasRendered: false,
-      buildFragment: function buildFragment(dom) {
-        var el0 = dom.createDocumentFragment();
-        var el1 = dom.createElement("div");
-        dom.setAttribute(el1,"class","starthouse-banner biggest");
-        var el2 = dom.createTextNode("WHO WE ARE");
-        dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createElement("article");
-        var el2 = dom.createTextNode("\n    ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("h1");
-        dom.setAttribute(el2,"class","no-lowercase");
-        var el3 = dom.createTextNode("Chris Econn.");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n\n    ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("p");
-        var el3 = dom.createTextNode("Chris is the president and chief architect at Start house. He brings 15 years of high scalability systems engineering and architecture, including 12 years of hands-on Mobile development experience to the team.  An international man of mystery, Chris lives and works where the problems are.  There have been sightings in the UK, Austin, and New York City.  He currently works out of his home in the Hollywood Hills, assembling his global Dark Army for the next great challenge.");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n");
-        dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createElement("article");
-        var el2 = dom.createTextNode("\n    ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("h1");
-        dom.setAttribute(el2,"class","no-lowercase");
-        var el3 = dom.createTextNode("Ryan Ries.");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n\n    ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("p");
-        var el3 = dom.createTextNode("Dr. Ries is an accomplished research scientist, system engineer, program manager, and business developer that has honed his expertise in scientific consulting and data analytics.  He has developed advanced imaging products, incorporating cutting edge hardware with data analytics to improve performance in mission critical deployments for Teledyne and Arete.  Dr. Ries does not do house calls.");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n");
-        dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createElement("article");
-        var el2 = dom.createTextNode("\n    ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("h1");
-        dom.setAttribute(el2,"class","no-lowercase");
-        var el3 = dom.createTextNode("The Dark Army.");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n\n    ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("p");
-        var el3 = dom.createTextNode("A band of misfits, foreign and domestic, Chris has found, mentored, and trained to apply their raw talents to execute with deadly precision. Under cover of night, they apply their expertise in algorithm development, scaling, operations, and embedded / mobile development while the enemy sleeps.");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n");
-        dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n\n");
         dom.appendChild(el0, el1);
         return el0;
       },
@@ -664,7 +578,7 @@ define('starthouse/templates/index', ['exports'], function (exports) {
         var el0 = dom.createDocumentFragment();
         var el1 = dom.createElement("h1");
         dom.setAttribute(el1,"class","starthouse-banner no-border");
-        var el2 = dom.createTextNode("START HOUSE");
+        var el2 = dom.createTextNode("START HOUSE.");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
@@ -770,7 +684,7 @@ define('starthouse/templates/our-work', ['exports'], function (exports) {
         var el0 = dom.createDocumentFragment();
         var el1 = dom.createElement("h1");
         dom.setAttribute(el1,"class","starthouse-banner no-border");
-        var el2 = dom.createTextNode("OUR WORK");
+        var el2 = dom.createTextNode("OUR WORK.");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n");
@@ -983,7 +897,7 @@ catch(err) {
 if (runningTests) {
   require("starthouse/tests/test-helper");
 } else {
-  require("starthouse/app")["default"].create({"name":"starthouse","version":"0.0.0+f815712f"});
+  require("starthouse/app")["default"].create({"name":"starthouse","version":"0.0.0+5727f259"});
 }
 
 /* jshint ignore:end */
